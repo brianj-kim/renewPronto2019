@@ -1,3 +1,5 @@
+const openSign = document.getElementById("showOpen");
+
 let tmpTime = getReginaTime();
 
 function setCloseTime(date) {
@@ -10,8 +12,8 @@ function setCloseTime(date) {
     
     //console.log(currentTime);
     if (currentTime < openTime || currentTime > beginLunchBreakTime || currentTime < endLunchBreakTime || currentTime > closeTime ) {
-        document.getElementById("showOpen").classList.add("setRed");
-        document.getElementById("showOpen").innerHTML = "Closed";
+        openSign.classList.add("setRed");
+        openSign.innerHTML = "Closed";
     }
 
 }
@@ -19,8 +21,8 @@ function setCloseTime(date) {
 function setCloseDate(date) {
 
     if(date.getDay() == 0) { // if the week of day is Sunday, set close
-        document.getElementById("showOpen").classList.add("setRed");
-        document.getElementById("showOpen").innerHTML = "Closed";
+        openSign.classList.add("setRed");
+        openSign.innerHTML = "Closed";
     }
 }
 
